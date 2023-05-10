@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script type="module" src="app.js"></script>
+  <script>
+    // const evtSource = new EventSource("/events");
+
+    // evtSource.onmessage = (e) => {
+    //   console.log("get msg.", e)
+    //   window.location.reload()
+    // };
+    let source = new EventSource("events");
+
+    source.onopen = function () {
+      console.log("Connection to server opened.");
+    };
+
+    source.onerror = function () {
+      console.log("Error occurred, trying to reconnect...");
+      source = new EventSource("events"); // reconnect
+    };
+
+    source.onmessage = function (e) {
+      console.log("Received: " + e.data);
+    };
+
+
+  </script>
+</head>
+
+<body>
+  <main id="root">
+  </main>
+</body>
+
+</html>

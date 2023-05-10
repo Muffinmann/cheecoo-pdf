@@ -1,0 +1,30 @@
+{
+  "name": "cheecoo-pdf",
+  "version": "1.0.0",
+  "description": "building reusable components for pdf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muffinmann/cheecoo-pdf.git"
+  },
+  "keywords": [
+    "pdf"
+  ],
+  "author": "muffinmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Muffinmann/cheecoo-pdf/issues"
+  },
+  "homepage": "https://github.com/Muffinmann/cheecoo-pdf#readme",
+  "devDependencies": {
+    "@types/node": "^20.1.1",
+    "express": "^4.18.2",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "jspdf": "^2.5.1"
+  }
+}
