@@ -5,7 +5,7 @@ console.log(window)
 
 const doc = new jspdf.jsPDF()
 
-doc.text("test content long strggggg", 10, 50)
+doc.text("test content long str", 10, 50)
 
 
 const pdfDataUri = doc.output('datauristring');

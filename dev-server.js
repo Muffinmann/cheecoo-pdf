@@ -34,18 +34,14 @@ const startServer = () => {
 
 startServer();
 
-// fs.watch('./public/app.js', (eventType, filename) => {
-//   if (filename) {
-//     console.log(`filename provided: ${filename}`);
-//     server.close(() => {
-//       console.log('Server stopped');
-//       server = startServer();
-//       clients.forEach(client =>
-//         client.write(`data: ${new Date().toISOString()}\n\n`)
-//       );
-//     });
-//     process.exit(0);
-//   } else {
-//     console.log('filename not provided');
-//   }
-// });
+fs.watch('./public/app.js', (eventType, filename) => {
+  if (filename) {
+    console.log(`filename provided: ${filename}`);
+    clients.forEach(client =>
+      client.write(`data: ${new Date().toISOString()}\n\n`)
+    );
+
+  } else {
+    console.log('filename not provided');
+  }
+});
